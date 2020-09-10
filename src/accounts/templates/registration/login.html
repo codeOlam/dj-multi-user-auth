@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h3>Login to MultiAuthApp</h3>
+
+			<form method="post" class="m-t" role="form"  action="{% url 'login' %}">
+			{% csrf_token %}
+			  <div class="form-group">
+			    {{form.email}}
+			  </div>
+			  <div class="form-group">
+			    {{form.password}}
+			  </div>
+			 <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+
+			<a href="{% url 'password_reset' %}"><small>Forgot password?</small></a>
+			<p class="text-muted text-center"><small>Do not have an account?</small></p>
+			<a class="btn btn-sm btn-white btn-block" href="{% url 'signup' %}">Create an account</a>
+			</form> 
+{% endblock %}
