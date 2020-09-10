@@ -87,8 +87,8 @@ class Student(models.Model):
 		return self.student.first_name+ " " +self.student.last_name
 
 
-	# def get_absolute_url(self):
-	# 	return reverse('std_profile', kwargs={'pk': self.student_id})
+	def get_absolute_url(self):
+		return reverse('student_profile', kwargs={'pk': self.student_id})
 
 
 class Teacher(models.Model):
