@@ -1,0 +1,8 @@
+{% autoescape off %}
+Welcome {{ user.email }},
+This Email is sent to you from {{site_name}}
+Please To verify your email address click on the link to confirm your registration, http://{{ domain }}{% url 'email_activation' uidb64=uid token=token %}
+
+If you didn't request this email, please kindly ignore.
+Cheers!
+{% endautoescape %}

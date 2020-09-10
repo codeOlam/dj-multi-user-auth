@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block accounts %}
+
+        <h2>Email Confirmation Done!</h2>
+
+        <div class="error-desc">
+            Hi {{user.email}}, Welcome to MultiUserApp. You have successfully confirmed your email address. please login to continue with the registration.
+        </div>
+        <a class="btn btn-lg btn-info btn-block" href="{% url 'login' %}">Login</a>
+        <p>or go to <a href="/">Home</a></p>
+    </div>
+
+{% endblock %}
