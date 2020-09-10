@@ -37,7 +37,7 @@ class StudentSignUpView(SignUpView, CreateView):
 
 class StudentProfileView(PermissionMixin, DetailView):
 	model 					= Users
-	context_object_name 	= 'std'
+	context_object_name 	= 'profile'
 	template_name			= 'accounts/student/std_profile.html'
 
 	#permission handling
@@ -51,7 +51,7 @@ class StudentProfileView(PermissionMixin, DetailView):
 		user_id		= self.kwargs.get('pk')
 
 		#get extra context data/obj
-		extra_fac = Student.objects.filter(student_id=user_id)
+		extra_std = Student.objects.filter(student_id=user_id)
 
 		context['extra_std'] = extra_std
 
@@ -107,9 +107,7 @@ class StudentUpdateProfileView(PermissionMixin, UpdateView):
 		StudentFormset = inlineformset_factory(Users, Student,
 									fields=('grade_year',
 											),
-									widgets={'description': forms.DateField(
-											attrs={'class': 'form-control col-sm-10',
-													'placeholder':'mm/dd/yyyy'}),
+									widgets={'description': forms.DateField(),
 																			
 									},
 									can_delete=False
