@@ -27,6 +27,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#When on production you use this for you email configuration
+# EMAIL_BACKEND   ='django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST      ='smtp.gmail.com'
+# EMAIL_PORT      = '587'
+# EMAIL_USE_TLS   =True
+# EMAIL_HOST_USER = ''
+# EMAIL_HOST_PASSWORD = ''
+
 
 #Wokrking with console email test servers
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
