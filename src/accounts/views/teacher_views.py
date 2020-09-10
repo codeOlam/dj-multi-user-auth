@@ -51,9 +51,9 @@ class TeacherProfileView(PermissionMixin, DetailView):
 		user_id		= self.kwargs.get('pk')
 
 		#get extra context data/obj
-		extra_std = Teacher.objects.filter(teacher_id=user_id)
+		extra_tch = Teacher.objects.filter(teacher_id=user_id)
 
-		context['extra_std'] = extra_std
+		context['extra_tch'] = extra_tch
 
 
 		return context
