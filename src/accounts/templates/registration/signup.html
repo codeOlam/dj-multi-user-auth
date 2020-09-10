@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% if form.errors %}
+<p>Please Fill the Required field and make sure your password is alphanumeric.</p>
+{% endif %}
+
+{% block content %}
+
+    <div class="middle-box text-center loginscreen   animated fadeInDown">
+
+
+            <h3>Welcome to MultAuthApp</h3>
+            <p>Please Chose how you may want to SignUp with us.</p>
+                <div class="col-lg-12">
+                    <div class="widget lazur-bg p-xl">
+
+                                <h2>
+                                    Create an Account
+                                </h2>
+                                <br>
+                                <a class="btn btn-sm btn-white btn-block text-dark" href="{% url 'std_signup' %}">SignUp as a Student</a>
+
+
+                    </div>            
+
+    </div>
+
+{% endblock %}
