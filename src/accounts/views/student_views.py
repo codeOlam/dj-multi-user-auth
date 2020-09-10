@@ -73,7 +73,7 @@ class StudentUpdateProfileView(PermissionMixin, UpdateView):
 		return self.model.objects.get(id=self.kwargs.get('pk'))
 
 	def get_success_url(self):
-		return reverse('fac_profile', args=[self.get_object().id])
+		return reverse('student_profile', args=[self.get_object().id])
 
 
 
@@ -85,9 +85,10 @@ class StudentUpdateProfileView(PermissionMixin, UpdateView):
 														can_delete=False
 														)		
 
-		formset 	= StudentFormset(request.POST, request.FILES, instance=users)
-		form 		= self.form_class(request.POST, request.FILES, instance=users)
+		formset 	= StudentFormset(request.POST, instance=users)
+		form 		= self.form_class(request.POST, instance=users)
 		if formset.is_valid():
+			form.save(commit=False)
 			formset.save()
 			form.save()
 
@@ -107,7 +108,9 @@ class StudentUpdateProfileView(PermissionMixin, UpdateView):
 		StudentFormset = inlineformset_factory(Users, Student,
 									fields=('grade_year',
 											),
-									widgets={'description': forms.DateField(),
+									widgets={'description': forms.DateInput(
+										attrs={'class': 'form-control col-sm-10', 
+										'placeholder':'mm/dd/yyyy'}),
 																			
 									},
 									can_delete=False
