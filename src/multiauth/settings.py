@@ -28,6 +28,15 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+#Wokrking with console email test servers
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST      ='localhost'
+EMAIL_PORT      = '25'
+EMAIL_USE_TLS   =False
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+
+
 # Application definition
 
 INSTALLED_APPS = [
