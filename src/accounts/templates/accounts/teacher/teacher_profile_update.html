@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h3 style="text-align: center;">Update Account</h3>
+		<hr/>
+
+
+{% if form.errors %}
+<p>Please Fill the Required field and follow the instructions for pasword.</p>
+{% endif %}
+
+
+	<form method="post">
+	{% csrf_token %}
+	  <div class="form-group">
+	    <label for="first_name">First Name</label>
+	    {{form.first_name}}
+	  </div>
+	  <div class="form-group">
+	    <label for="last_name">Last Name</label>
+	    {{form.last_name}}
+	  </div>
+	  <div class="form-group">
+	    <label for="other_names">Other Name</label>
+	    {{form.other_names}}
+	  </div>
+	  <div class="form-group">
+	    <label for="date_of_birth">Date of Birth</label>
+	    {{form.date_of_birth}}
+	  </div>
+	  <div class="form-group">
+	    <label for="sex">Sex</label>
+	    {{form.sex}}
+	  </div>
+	  <div class="form-group">
+	    <label for="address">Address</label>
+	    {{form.address}}
+	  </div>
+  	{% for fm in formset %}
+		{{fm.id}}
+	  <div class="form-group">
+	    <label for="description">Description</label>
+	    {{fm.description}}
+	  </div>
+	  <div class="form-group">
+	    <label for="publication">Publication</label>
+	    {{fm.publication}}
+	  </div>
+	 {% endfor %}
+	 {{ formset.management_form }} 
+	  <button type="submit" class="btn btn-primary">Update</button>
+	  <p>Or <a href="/accounts/teacher/{{user.pk}}/"> Cancle </a>, to continue to profile.</p>
+	</form> 
+{% endblock %}

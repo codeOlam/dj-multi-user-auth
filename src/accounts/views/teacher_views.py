@@ -13,7 +13,7 @@ from django.contrib.auth.mixins import UserPassesTestMixin
 from accounts.models import Users, Teacher
 from accounts.views.views import SignUpView
 from accounts.forms.forms import LoginForm, ProfileUpdateForm
-from accounts.forms.student_forms import TeacherSignUpForm
+from accounts.forms.teacher_forms import TeacherSignUpForm
 
 
 class PermissionMixin(UserPassesTestMixin):

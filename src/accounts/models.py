@@ -99,5 +99,5 @@ class Teacher(models.Model):
 	def __str__(self):
 		return self.teacher.first_name+ " " + self.teacher.last_name
 
-	# def get_absolute_url(self):
-	# 	return reverse('teacher_profile', kwargs={'pk': self.teacher_id})
+	def get_absolute_url(self):
+		return reverse('teacher_profile', kwargs={'pk': self.teacher_id})
