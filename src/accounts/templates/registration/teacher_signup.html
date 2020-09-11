@@ -4,7 +4,7 @@
 {% block accounts %}
             <h3>Register to MultiAuthApp</h3>
             <p>Create account as a Teacher</p>
-            <form method="post" class="m-t" role="form" action="{% url 'std_signup' %}">
+            <form method="post" class="m-t" role="form" action="{% url 'teacher_signup' %}">
             	{% csrf_token %}
                 <div class="form-group">
 				    {{form.email}}

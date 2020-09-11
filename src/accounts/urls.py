@@ -21,7 +21,7 @@ urlpatterns=[
 	path('login/', LogInView.as_view(), name='login'),
 	path('logout/', LogOutView.as_view(), name='logout'),
 	path('student/<int:pk>/student_update_profile/', StudentUpdateProfileView.as_view(), name='student_update_profile'),
-	path('teacher/<int:pk>/teacher_update_profile', TeacherUpdateProfileView.as_view(), name='teacher_update_profile'),
+	path('teacher/<int:pk>/teacher_update_profile/', TeacherUpdateProfileView.as_view(), name='teacher_update_profile'),
 	path('student/<int:pk>/', StudentProfileView.as_view(), name='student_profile'),
 	path('teacher/<int:pk>/', TeacherProfileView.as_view(), name='teacher_profile'),
 ]

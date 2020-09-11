@@ -80,7 +80,8 @@ class TeacherUpdateProfileView(PermissionMixin, UpdateView):
 	def post(self, request, *args, **kwargs):
 		users 		= self.model.objects.get(email=self.get_object())
 		TeacherFormset = inlineformset_factory(Users, Teacher,
-														fields=('grade_year',
+														fields=('description',
+																'publication'
 																),
 														can_delete=False
 														)		
@@ -106,7 +107,8 @@ class TeacherUpdateProfileView(PermissionMixin, UpdateView):
 		users 		= self.model.objects.get(email=self.get_object())
 
 		TeacherFormset = inlineformset_factory(Users, Teacher,
-									fields=('grade_year',
+									fields=('description',
+											'publication'
 											),
 									widgets={'description': forms.DateInput(
 										attrs={'class': 'form-control col-sm-10', 
