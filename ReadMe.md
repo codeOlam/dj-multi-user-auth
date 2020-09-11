@@ -8,7 +8,7 @@ Django is a web-framework written in Python and runs the backend for many of the
 
 This app features the following:
 
--- AbstractUser for custom user configuration
+-- AbstractUser for custom user authentication
 
 
 -- Authentication Backend configured to authenticate users, using email and password
@@ -47,28 +47,40 @@ This app features the following:
 
 
 ## Run App
-1. make sure your virtualenv is ativated.
+1. After cloning this repo, make sure your virtualenv is ativated and change your path to $app_root/.
 
 `
-(venv)path/to/app/src$
+(venv)path/to/app$
 `
 
-2. make sure you are in the same directory where manage.py is then run
+2. install packages required by running
+`(venv)path/to/app$ pip install -r requirements.txt
+`
 
+3. change director to src/ make sure you are in the same directory where manage.py is then run
+
+`(venv)path/to/app/src$ python manage.py makemigrations
+`
+
+4. The migrate the app
+`(venv)path/to/app/src$ python manage.py migrate
+`
+
+5. To run the development server
 `(venv)path/to/app/src$ python manage.py runserver
 `
 
-3. go to your web browser and enter 127.0.0.1:8000 
+6. go to your web browser and enter 127.0.0.1:8000 
 
 ## Recommendations
-This App is not designed to be used full in deployement. You may want to make some adjustments to it and include in you project
+This App is not designed to be used full in deployement. You are free to make any adjustments to it and include in you project
  
 
 
 ## Resources
-1. [Django 3.x Doc](https://docs.djangoproject.com/en/3.0/)
+1. [Django 3.x Doc](https://docs.djangoproject.com/en/3.1/)
 2. [My Previous Repo](https://github.com/codeOlam/multi-user-auth-django)
 
 ### Other Resources
-1. [Customizing authentication in Django](https://docs.djangoproject.com/en/3.0/topics/auth/customizing/) 
+1. [Customizing authentication in Django](https://docs.djangoproject.com/en/3.1/topics/auth/customizing/) 
 
