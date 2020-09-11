@@ -112,7 +112,7 @@ class TeacherUpdateProfileView(PermissionMixin, UpdateView):
 											),
 									widgets={'description': forms.DateInput(
 										attrs={'class': 'form-control col-sm-10', 
-										'placeholder':'mm/dd/yyyy'}),
+										'placeholder':'About You'}),
 																			
 									},
 									can_delete=False
